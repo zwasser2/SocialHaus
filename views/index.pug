@@ -1,0 +1,24 @@
+extends layout
+
+block content
+  script.
+      function update() {
+          var req = new XMLHttpRequest();
+          req.open("post", "/");
+          req.onreadystatechange = function () {
+              if (req.readyState == 4) {
+                  document.getElementById("content").innerHTML = req.responseText;
+              }
+          }
+          req.send();
+      }
+
+
+  h1= title
+  p Welcome to SocialHaus
+
+  #{title}
+
+
+  #content!= results
+    input(type="button",value="Update",onclick="update()")
