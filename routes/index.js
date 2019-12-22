@@ -30,7 +30,7 @@ router.get('/', function(req, res, next) {
 
 
         } else {
-            console.log(err)
+            console.log(err + 'ahhh')
         }
     })
 });
